@@ -28,7 +28,7 @@ namespace Restaurant.WebApi.Controllers
         {
             _context.Categories.Add(category);
             _context.SaveChanges();
-            return Ok(category);
+            return Ok("Əlavəetmə əməliyyatı uğurla tamamlandı");
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteCategory(int id)
