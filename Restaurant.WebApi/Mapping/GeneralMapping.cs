@@ -2,6 +2,7 @@
 using AutoMapper.Features;
 using Restaurant.WebApi.Dtos.FeatureDtos;
 using Restaurant.WebApi.Dtos.MessageDtos;
+using Restaurant.WebApi.Dtos.NotificationDtos;
 using Restaurant.WebApi.Dtos.ProductDtos;
 using Restaurant.WebApi.Entities;
 
@@ -23,6 +24,11 @@ namespace Restaurant.WebApi.Mapping
 
             CreateMap<Product,CreateProductDto>().ReverseMap();
             CreateMap<Product,ResultProductWithCategoryDto>().ForMember(x=>x.CategoryName, y=>y.MapFrom(z=>z.Category.CategoryName)).ReverseMap();
+
+            CreateMap<Notification,ResultNotificationDto>().ReverseMap();
+            CreateMap<Notification,CreateNotificationDto>().ReverseMap();
+            CreateMap<Notification,UpdateNotificationDto>().ReverseMap();
+            CreateMap<Notification,GetByIdNotificationDto>().ReverseMap();
         }
     }
 }

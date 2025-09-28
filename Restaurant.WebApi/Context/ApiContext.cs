@@ -19,11 +19,8 @@ namespace Restaurant.WebApi.Context
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-        public DbSet<Event> Events
-        {
-            get; set;
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
-
-        }
     }
 }

@@ -55,5 +55,11 @@ namespace Restaurant.WebApi.Controllers
             _context.SaveChanges();
             return Ok("Güncəlləmə əməliyyatı uğurla tamamlandı");
         }
+        [HttpGet("MessageListByIsReadFlse")]
+        public IActionResult MessageListByIsReadFlse()
+        {
+            var value = _context.Messages.Where(x => x.IsRead == false).ToList();
+            return Ok(value);
+        }
     }
 }

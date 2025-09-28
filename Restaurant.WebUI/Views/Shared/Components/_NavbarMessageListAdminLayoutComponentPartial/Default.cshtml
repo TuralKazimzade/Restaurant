@@ -1,0 +1,41 @@
+﻿@model List<Restaurant.WebUI.Dtos.MessageDtos.ResultMessageByIsReadFalseDto>
+
+<li class="dropdown dropdown-list-toggle">
+    <a href="#" data-toggle="dropdown"
+       class="nav-link nav-link-lg message-toggle">
+        <i data-feather="mail"></i>
+        <span class="badge headerBadge1">
+            @Model.Count
+        </span>
+    </a>
+
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+        <div class="dropdown-header">
+            Mesajlar
+            <div class="float-right">
+                <a href="#" id="markAllRead">Hamısını oxunmuş et</a>
+            </div>
+        </div>
+
+        <div class="dropdown-list-content dropdown-list-message">
+            @foreach (var item in Model)
+            {
+                <a href="/Message/MessageDetail/@item.MessageId" class="dropdown-item">
+                    <div class="dropdown-item-avatar">
+                        <img alt="image" src="/otika-bootstrap-admin-template/assets/img/users/user-1.png" class="rounded-circle">
+                    </div>
+
+                    <div class="dropdown-item-desc">
+                        <div class="message-user">@item.FullName</div>
+                        <div class="message-text">@item.Subject</div>
+                        <div class="time">@item.SendDate.ToString("dd MMMM yyyy - HH:mm")</div>
+                    </div>
+                </a>
+            }
+        </div>
+
+        <div class="dropdown-footer text-center">
+            <a href="/Message/MessageList">Bütün mesajlar <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</li>
