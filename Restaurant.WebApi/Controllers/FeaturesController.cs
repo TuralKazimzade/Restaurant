@@ -33,9 +33,10 @@ namespace Restaurant.WebApi.Controllers
             _context.SaveChanges();
             return Ok("Əlavəetmə əməliyyatı uğurla tamamlandı");
         }
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public IActionResult DeleteFeature(int id)
-        { var value = _context.Features.Find(id);
+        {
+            var value = _context.Features.Find(id);
             _context.Features.Remove(value);
             _context.SaveChanges();
             return Ok("Silinmə əməliyyatı uğurla tamamlandı");

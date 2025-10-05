@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.Features;
+using Restaurant.WebApi.Dtos.CategoryDtos;
 using Restaurant.WebApi.Dtos.FeatureDtos;
 using Restaurant.WebApi.Dtos.MessageDtos;
 using Restaurant.WebApi.Dtos.NotificationDtos;
@@ -29,6 +30,9 @@ namespace Restaurant.WebApi.Mapping
             CreateMap<Notification,CreateNotificationDto>().ReverseMap();
             CreateMap<Notification,UpdateNotificationDto>().ReverseMap();
             CreateMap<Notification,GetByIdNotificationDto>().ReverseMap();
+
+            CreateMap<Category,CreateCategoryDto>().ReverseMap();
+            CreateMap<Category,UpdateCategoryDto>().ReverseMap();
         }
     }
 }

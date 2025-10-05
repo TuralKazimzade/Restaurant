@@ -1,6 +1,6 @@
-﻿@model List<ResultCategoryDto>
+﻿@model List<ResultProductDto>
 @{
-    ViewData["Title"] = "CategoryList";
+    ViewData["Title"] = "ProductList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
@@ -11,14 +11,16 @@
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Kateqoriya siyahısı</h4>
+                        <h4>Məhsulların siyahısı</h4>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Kateqoriya adı</th>
+                                    <th scope="col">Məhsulun adı</th>
+                                    <th scope="col">Məhsulun Qiyməti</th>
+                                    <th scope="col">Məhsulun Kateqoriyası</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncəllə</th>
                                 </tr>
@@ -29,17 +31,19 @@
                                     count++;
                                     <tr>
                                         <th scope="row">@count</th>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.ProductId</td>
                                         <td>@item.CategoryName</td>
-                                        <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
-                                        <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncəllə</a></td>
-                                        
+                                        <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Product/UpdateProduct/@item.ProductId" class="btn btn-success">Güncəllə</a></td>
+
                                     </tr>
                                 }
-                               
+
 
                             </tbody>
                         </table>
-                        <a href="/Category/CreateCategory/" class="btn btn-success">Yeni Kategori əlavə et</a>
+                        <a href="/Product/CreateProduct/" class="btn btn-success">Yeni Məhsulu əlavə et</a>
                     </div>
                 </div>
 
